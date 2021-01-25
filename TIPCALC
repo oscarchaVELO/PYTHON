@@ -1,0 +1,23 @@
+#Assignment: Tip Calculator
+#Class: PROG 110
+#Date: 5/26/20
+#Author: Samuel Hale
+#Description: Calcualtes diferrent types of tips to leave
+def costWithTip(mealCost, percentTip):
+    return mealCost * (1 + percentTip * 0.01)
+
+def main():
+    mealCost = 0
+    while mealCost <= 0:
+        mealCost = float(input("What was the cost of the meal: "))
+        if mealCost <= 0:
+            print("the cost of the meal must be a positive number.")
+    print('-'*40)
+    for i in range(15, 26, 5):
+        print("tip: ", i, "%", sep='')
+        print("Total amount including tip: $", round(costWithTip(mealCost, i), 2), sep='')
+        print('-'*40)
+    print("Goodbye!")
+
+if __name__ == "__main__":
+    main()

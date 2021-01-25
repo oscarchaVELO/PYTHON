@@ -1,0 +1,45 @@
+#Function to print the list of item names and prices 
+def printPriceList(namesList, pricesList ):
+    print("Here's a list of items:")
+    print("***"*10)
+    for i in range(len(namesList)):
+        print(i+1, '\t', namesList[i], '\t', pricesList[i])
+    print("***"*10)
+
+#Function to calculate the final price of ordering
+#count number of items with given name. Returned price is rounded to 2 digits
+# E.g. calculatePrice("desk",2) should return (125.25*2) = 250.5
+# if no item has given name, return -1
+# e.g. calculatePrice("bed",1) should return -1
+def calculatePrice(namesList, pricesList, name, count):
+    price = 0
+    if name.lower() in namesList:
+        index = namesList.index(name.lower())
+        price = round(pricesList[index] * count,2)
+        return price
+    return -1
+
+def main():
+    print("Welcome to Funnyville's Furinture shop")
+    item_names = ["desk", "chair", "lamp", "table"] #names of items
+    item_prices = [125.25, 72.0, 25.75, 55.50] #prices for items
+    
+    printPriceList(item_names, item_prices)
+    total = 0
+    ans = 'y'
+    while (ans.startswith('y')) :
+        itemname = input("Enter the name of item to order: ")
+        itemCount = int(input("Enter the quantity to order: "))
+        price = calculatePrice(item_names, item_prices, itemname, itemCount)
+        if price == -1:
+            print("we do not have that item.")
+        else:
+            total += price
+        print("Total price so far: ", round(total,2))
+        ans = input("Order more items? (y/n)").lower()
+    print("***"*10)
+    print("Thanks for your order. Your order total is ${:,.2f}".format(total))
+    print("***"*10)
+
+if (__name__ == "__main__"):
+    main()

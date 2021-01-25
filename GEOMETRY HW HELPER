@@ -1,0 +1,33 @@
+#Triangle detecor
+#Prog 110
+#04/27/20
+#Oscar Cha
+
+a = int(input("Give me a side for triangle"))
+b = int(input("Give me a side for triangle"))
+c = int(input("Give me a side for triangle"))
+
+if c >= a + b:
+    print ("This is not a triangle")
+
+elif a >= b + c:
+    print("not a triangle")
+
+elif b >= a + c:
+    print("not a triangle")
+
+else:
+
+    if a == b == c:
+        print ("equilateral traingel")
+    elif a == b:
+        print("iscolces")
+    elif c == b:
+        print("iscolces")
+    elif a == c:
+        print("iscolces")
+    else:
+        print("scalene")
+
+print("goodbye")
+        

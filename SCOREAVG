@@ -1,0 +1,44 @@
+#Program to calculate average scores for students
+
+#function to print a list of lists with printing one row on a line
+def printListOfList(inputListOfList):
+    pass # a special keyword that does nothing
+
+#Function to append averages to the incoming list of lists
+# with each row having the form:
+# [studentname, score1, score2, score3]
+# after the function, each row will have the form:
+# [studentname, score1, score2, score3, average]
+def appendAverageScore(inputListOfList):
+    pass # a special keyword that does nothing
+
+# Function to calculate average to the incoming list with each row having the
+# form: [studentname, score1, score2, score3]
+# return a new list with each row of the form:
+# [studentname, average]
+def calculateAverageScore(inputListOfList):
+    pass # a special keyword that does nothing
+
+
+def main():
+    print("Welcome to the average score calculator")
+
+    studentsList = [["Abby", 30,35,40],
+                    ["Chris", 20,50,10],
+                    ["Bob", 40,46,50]]
+    print("\nstudentList before ..")
+    printListOfList(studentsList)
+
+##    #call method that calculates and returns a list of averages
+##    newList = calculateAverageScore(studentsList)
+##    print("\nnewList after calculateAverageScore..")
+##    printListOfList(newList)
+##
+##    #call method that calculates and appends the averages
+##    appendAverageScore(studentsList)
+##    print("\nstudentList after appendAverageScore ..")    
+##    printListOfList(studentsList)
+
+if (__name__ == "__main__"):
+    main()
+

@@ -1,0 +1,58 @@
+## Program to generate emailId and temporary password given a students's fullname
+## for funnyville highschool following given guidelines.
+
+import random
+
+# Useful global constants
+LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+SPECIAL_CHARACTERS = '!@#$%'
+
+def generateEmailID(fullname):
+    
+    fullname = fullname.lower()
+    fullname = fullname.split(",")
+    if (fullname == 3):
+        print((fullname[3]),(fullname[2]),(fullname[1]),"@","fhs.edu")
+    else:
+        print((fullname[2]),(fullname[1]),"@","fhs.edu")        
+    ''' Generate and return email id.
+    takes the user’s full name in the form “First Last” OR “First Middle Last”.
+    Generates and returns email id which 
+        is all lower case.
+        is of the form “last.first@fhs.edu” if no middle name provided or
+        or of the form “last.first.middIeInitial@fhs.edu” if middle name is provided. '''
+    pass
+
+def generatePassword(fullname):
+    fullname = fullname.upper()
+    first_char = fullname[1]
+    random.choice(letters)
+    numbers = [1,2,3,4,5,6,7,8,9]
+    letters = string.ascii.lowercase
+    special = ['!','@','#','$','%']
+ 
+    print((first_char),(random.choice(letters),(random.choice(letters),(random.choice(numbers),(random.choice(numbers),(random.choice(special),(random.choice(special))))))))
+  
+
+    pass
+
+def main():
+    print("Welcome to Funnyville High School registration")
+    ans = 'y'
+    while (ans == 'y'):
+        fullname = input("\nEnter your full name: ").strip()
+        email = generateEmailID(fullname)
+        password = generatePassword(fullname)
+        # Give user email id and password
+        print("Your FHS email id:", email)
+        print("Your temporary passwd:", password)
+
+        #prompt to check if want to continue
+        ans = input("\nContinue?(y/n)").lower()
+        
+    print("Good Bye!")
+
+    
+if __name__ == "__main__":
+    main()
+    

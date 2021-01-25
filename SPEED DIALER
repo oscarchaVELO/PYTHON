@@ -1,0 +1,99 @@
+# Program to simulate a speed dialer
+# Complete the four functions listed below that work with
+# two global lists that manage a dialer with 5 fixed slots.
+# Initialize the dialer with empty data.
+dialerNames = ["Empty", "Empty", "Empty", "Empty", "Empty"]
+dialerNumbers = ["Empty", "Empty", "Empty","Empty", "Empty"]
+
+#function to show the current dialer data
+def printList():
+    #Implement this function
+    print(dialerNames)
+    print(dialerNumbers)
+    
+#Function to handle dial by slot number command which
+#   prompts the user for the slot number
+#   validates the slot number
+#   if not within valid range (1 through 5), prints "Invalid slot number"
+#   else checks if the slot at given slot number is empty, if so prints "Slot empty"
+#   else prints "Calling name ........xxx-xxx-xxxx"
+# E.g. If user enters 3 and slot number 3 (values at index 2 in above lists) had
+#   name = "Susan" and number 4255551212, this function will print
+#   "Dialing Susan ........425-555-1212"
+def dialBySlot():
+    slot = int(input("enter a slot number"))
+    if slot >= 6:
+        print("invalid")
+    else:
+        print(dialerNames,slot)
+        print(dialerNumbers,slot)
+        
+    #Implement this function
+    pass
+        
+#Function to handle dial by name command which
+#   prompts the user for the name
+#   checks if the name is present in dialerNames list (make the comparison
+#   case-insensitive)
+#   if not present prints "Name not found."
+#   else prints "Calling name ....xxx-xxx-xxxx"
+# E.g. If user enters "Susan" and slot number 3 (values at index 2
+#   in above lists) had name = "Susan" and number 4255551212,
+#   dialByName() will print
+#   "Dialing Susan ........425-555-1212"
+def dialByName():
+    nameSearch = input("enter name")
+    if nameSearch in dialerNames:
+        print("calling")
+        print(nameSearch)
+        print(dialerNumbers)
+    else:
+        print("no name found")
+    #Implement this function
+    pass
+    
+#Function to handle update by slot number command which
+#   prompts the user for the slot number to be updated
+#   validates the slot number, if not within valid range, prints "Invalid slot number"
+#   else, 
+#       prompts the user for the new name and new number
+#       and updates entries for the slot number.
+#       prints "Updated slot number X" where X is the slot number user entered.
+
+def updateSlot():
+    updateslot = int(input("enter a slot to be updated"))
+    if updateslot >= 6:
+                     print("invalid")
+    else:
+        newnum = int(input("enter new number"))
+        namenew = input("enter new name")
+        dialerNames.insert(updateslot,namenew)
+        dialerNumbers.insert(updateslot,newnum)
+        print("updates slot"+str(updateslot)+"")
+        print("new number"+str(newnum)+"")
+        print("new name "+(namenew)+"")
+                     
+    #Implement this function
+    pass
+
+def main():
+    print('''Welcome to the Speed Dialer.
+Commands:
+p for print \tn dial by name
+u for update\ts dial by slot
+e for exit''')
+    command = input('''Please enter command(p/n/s/u/e): ''').lower()
+    while (not command.startswith('e')):
+        if (command.startswith('p')):
+            printList()
+        elif (command.startswith('n')):
+            dialByName()
+        elif (command.startswith('s')):
+            dialBySlot()
+        elif (command.startswith('u')):
+            updateSlot()
+        command = input("Please enter command(p/n/s/u/e): ").lower()
+    print("Goodbye!")
+
+if __name__ == "__main__":
+    main()

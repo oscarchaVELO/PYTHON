@@ -1,0 +1,54 @@
+#Zellers algorthim
+#PROG 110
+#Date 5/4/2020
+#OScar Cha
+#Program to display day of the week for a given date
+month = int(input("Enter month 1-12:"))
+day = int(input("Enter month 1-31:"))
+year = int(input("Enter month 1582-4902:"))
+yearrr = round(year,-3)
+if month == 1:
+    month = 11
+    year = (year - 1)
+
+elif month == 2:
+    month = 12
+    year = (year - 1)
+
+else:
+     month = month - 2
+
+
+
+
+A = month
+B = day
+C = (year % yearrr)
+D = int(str(year)[:2])
+
+print( A, B, C, D)
+
+W = (13*A-1)//5
+X = C // 4
+Y = D // 4
+Z = W + X + Y + B + C - 2*D
+R = Z % 7
+
+print ( W, X, Y, Z, R)
+
+if R == 0:
+    print("Day of week is Sunday")
+elif R == 1:
+    print("Day of week is Monday")
+elif R == 2:
+    print("Day of week is Tuesday")
+elif R == 3:
+    print("Day of week is Wednesday")
+elif R == 4:
+    print("Day of week is Thursday")
+elif R == 5:
+    print("Day of week is Friday")
+elif R == 6:
+    print("Day of week is Saturday")
+
+           

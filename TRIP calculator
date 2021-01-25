@@ -1,0 +1,43 @@
+#Oscar Cha
+#Prog 110
+#MPG PROGRAM
+#calcuate MPG over legs and total
+# May 10 2020
+
+
+print("Welcome ")
+ode = float(input("Enter the start odemeter value"))
+counter = 0
+while ode < 0:
+    print("not valid")
+
+gas = float(input("How many gallons of gas for next leg"))
+totalgas = gas
+odeNew = float(input("what is new odometer reading"))
+average_mpg = (odeNew-ode)/gas
+print("average miles per gallon for this leg is "+str(average_mpg)+"")
+moreIn = input(" would you like to continue trip y/n")
+finalo = odeNew
+counter += 1
+while moreIn == 'y':
+    gas = float(input("How many gallons of gas for next leg"))
+    odeNew1 = float(input("what is new odometer reading"))
+    
+    
+    if gas > 0 and (odeNew1 >= odeNew):
+        average_mpg1 = (odeNew1-odeNew)/gas
+        print("average miles per gallon for this leg is "+str(average_mpg1)+"")
+        counter += 1
+        totalgas = totalgas + gas
+        finalo = odeNew1
+        moreIn = input(" would you like to continue trip y/n")
+     
+
+    else:
+        print("the new odometer reading should be greater than the last and gas positive")
+        
+print(" Number of legs of the trip was" +str(counter)+"" )
+AVMPG = (finalo - ode) / totalgas
+print(AVMPG)
+print("bye")
+        

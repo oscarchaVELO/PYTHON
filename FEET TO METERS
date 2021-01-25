@@ -1,0 +1,4 @@
+print (" Hello welcome to apllication feet to meters")
+feet = int(input("enter number of feet"))
+meters = feet * 0.3048
+print (" DISTANCE IN METERS IS:" + str(meters))

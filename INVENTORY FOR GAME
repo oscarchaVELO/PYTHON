@@ -1,0 +1,72 @@
+##############################################################################
+## Program that keeps track of the inventory of items a wizard is carrying. ##
+## Your program will allow the user to show/add/remove/edit the items the   ##
+##      wizard is carrying. 
+############################################################################
+def display_title():
+    print("The Wizard Inventory program")
+    print()    
+
+def display_menu():
+    print("COMMAND MENU")
+    print("show - Show all items")
+    print("grab - Grab an item")
+    print("edit - Edit an item")
+    print("drop - Drop an item")
+    print("exit - Exit program")
+    print()
+
+def show(inventory):
+    inventory = ["orb", "staff", "spellbook"]
+    for item in inventory:
+        print(item)
+    pass # To be implemented
+
+def grab_item(inventory):
+    print("which item would you like to add??" )
+    if (item -1) in range (master_inventory_list):
+        while yes:
+            grab_it (inventory, " ")
+    pass # To be implemented
+
+def edit_item(inventory):
+    inventory = ["orb", "staff", "spellbook", "hat", "potion", "robe"]
+    item = input("What item are you looking for? ")
+    if item in inventory:
+        inventory.remove(item)
+
+    pass # To be implemented
+
+def drop_item(inventory):
+    inventory = ["orb", "staff", "spellbook", "hat", "potion", "robe"]
+    item = input("What item would you like to drop? ")
+    for item in inventory:
+        inventory.pop()
+    pass # To be implemented
+
+def main():
+    display_title()
+    display_menu()
+
+    # start with these 3 items
+    inventory = ["wooden staff", "wizard hat",
+                 "cloth shoes"]
+
+    while True:        
+        command = input("Command: ")        
+        if command == "show":
+            show(inventory)
+        elif command == "grab":
+            grab_item(inventory)
+        elif command == "edit":
+            edit_item(inventory)
+        elif command == "drop":
+            drop_item(inventory)
+        elif command == "exit":
+            break
+        else:
+            print("Not a valid command. Please try again.\n")
+    print("Bye!")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,18 @@
+#Assignment: Gross Pay calculator
+#Class:Prog 110
+#Date: 4-15-2020
+#Author: Oscar Cha
+#Description: calculate gross pay according to formula
+
+
+
+
+
+
+print ("welcome to Gross Pay Calc")
+hours=int(input("Enter the number of hours you work"))
+pay=int(input("Enter your hourly pay rate"))
+
+final = hours * pay
+print("Your gross pay is:" +str(final))
+
